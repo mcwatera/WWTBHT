@@ -1,0 +1,90 @@
+body{
+    font-family: Merriweather, serif;
+    background-color: #f2f2f2;
+    width: 100%;
+}
+
+form{
+    border: #339933 solid 5px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    float: right;
+    background-color: #8cd98c;
+    z-index: 1;
+    position: absolute;
+    top: 200px;
+    right: 20px;
+}
+
+#keywordentry {
+    width: 250;
+    margin: auto;
+    padding: 10px;
+    border: #339933 solid 5px;
+    border-radius: 10px;
+}
+
+nav {
+    position: fixed;
+    margin: 0;
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    float: left;
+    z-index: -1;
+    width: 100%;
+    padding-top: 20px;
+    text-decoration: underline;
+}
+
+.vine_right {
+    -webkit-transform: scaleX(-1);
+    max-width: 450px;
+    width: auto\9;
+    max-height: 90px;
+    height: auto;
+    right: 0px;
+    position: absolute;
+}
+
+.vine_left {
+    max-width: 450px;
+    width: auto\9;
+    max-height: 90px;
+    height: auto;
+    position: absolute;
+    left: 0px;
+}
+
+.headline {
+    width: 100%;
+    overflow: auto;
+}
+
+#bigtfidfgraph {
+    padding: 20px;
+    margin: 5% 15%;
+    width: 800px;
+    height: 500px;
+}
+
+#resultsdocuments {
+    width: 65%;
+    margin: 0 auto;
+}
+
+#revealifkeyword {
+    display:none; 
+}
+
+#revealifyear {
+    display: none;
+}
+
+
+

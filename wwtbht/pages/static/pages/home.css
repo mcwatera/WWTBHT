@@ -1,0 +1,17 @@
+body { 
+  background: url(https://daily.jstor.org/wp-content/uploads/2016/05/Walt_Whitman_steel_engraving_July_1854_1050x700.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: Merriweather;
+}
+
+.jumbotron {
+    text-align: center;
+    margin-top: 500px;
+}
+
+.navbar {
+  font-size: 14px;
+}

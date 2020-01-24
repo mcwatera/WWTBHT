@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+{% load static %}
+{% block head %}
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="{% static "css/searching.css" %}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    
+    
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-1.3.4.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-1.3.4.min.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.bokeh.org/bokeh/release/bokeh-tables-1.3.4.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-1.3.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      function choiceCheck() {
+        if (document.getElementById('keywordsearch').checked) {
+          document.getElementById("myform").reset();
+          document.getElementById('revealifyear').style.visibility = 'hidden';
+          document.getElementById('revealifkeyword').style.visibility = 'visible';
+        }
+        else if (document.getElementById('yearsearch').checked) {
+          document.getElementById("myform").reset();
+          document.getElementById('revealifkeyword').style.visibility = 'hidden';
+          document.getElementById('revealifyear').style.visibility = 'visible';
+        }
+        else {
+          document.getElementById('revealifyear').style.visibility = 'hidden';
+          document.getElementById('revealifkeyword').style.visibility = 'hidden';
+        }
+
+      }
+    </script>
+    {{ script | safe }}
+    <title>WW:TBHT</title>
+</head>
+{% endblock %}
+
+{% block body %}
+<body>
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><i class="fab fa-pagelines"></i>  WW:TBHT</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/searching">Search</a></li>
+        <li><a href="/data">Data - Keywords</a></li>
+        <li><a href="/graphs">Data - Graphs</a></li>
+        <li><a href="/background">Background</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+    <div class="headline">
+      <img class="vine_left" src="https://i.ibb.co/285jFB5/download.png">
+      
+      {% if keyword %}
+          <h1>Results for "{{ keyword }}"</h1>
+      {% elif years %}
+        <h1>Results for {{ years }}</h1>
+      {% else %}
+        <h1>Search WW:TBHT</h1>
+      {% endif %}
+      
+      <img class="vine_right" src="https://i.ibb.co/285jFB5/download.png">
+        
+    </div>
+    
+    {% if errorsearch %}
+      <br><br><br><h3 id="errormessage"> &nbsp;&nbsp;&nbsp; {{ errorsearch }} </h3>
+    {% endif %}
+   
+   <div id="bigtfidfgraph">
+       {{ div | safe }}
+   </div>
+   
+   <div id="resultsdocuments">
+    {% for document in documents %}
+      <div class="document">
+        <h3 class="title">{{ document.title }} </h3>
+        <h4 class="date"> {{ document.date }} </h4>
+        <p class="citation"> {{ document.citation }} </p>
+        <div class="text">{{ document.body | safe }}</div>
+      </div>
+    {% endfor %}
+   </div>
+   
+    <form action="{% url 'searching:index' %}" method="post" id="myform">
+    {% csrf_token %}
+        <h3>Search Type:</h3>
+        <input type="radio" onclick="javascript:choiceCheck();" name="choicesearch" id="keywordsearch">
+        <label for="keywordsearch">Keyword</label>
+        <input type="radio" onclick="javascript:choiceCheck();" name="choicesearch" id="yearsearch">
+        <label for="yearsearch">Year</label>
+        
+        <div id="revealifkeyword" style="visibility:hidden">
+          <h3>Keyword</h3>
+          <input id="keywordentry" type="text" name="keyword"><br><br>
+        </div>
+        <div id="revealifyear" style="visibility:hidden">
+          <h3>Year</h3>
+          <h5>*Note: only one year is currently selectable at a time</h5>
+          <select name="year" id="yearselect">
+              <option disabled selected value> -- select an option -- </option>
+              <option value="1842">1842</option>
+              <option value="1845">1845</option>
+              <option value="1855">1855</option>
+              <option value="1856">1856</option>
+              <option value="1857">1857</option>
+              <option value="1858">1858</option>
+              <option value="1859">1859</option>
+              <option value="1860">1860</option>
+              <option value="1861">1861</option>
+              <option value="1865">1865</option>
+              <option value="1866">1866</option>
+              <option value="1867">1867</option>
+              <option value="1868">1868</option>
+              <option value="1869">1869</option>
+              <option value="1870">1870</option>
+              <option value="1871">1871</option>
+              <option value="1872">1872</option>
+              <option value="1874">1874</option>
+              <option value="1875">1875</option>
+              <option value="1876">1876</option>
+              <option value="1880">1880</option>
+              <option value="1881">1881</option>
+              <option value="1882">1882</option>
+              <option value="1883">1883</option>
+              <option value="1884">1884</option>
+              <option value="1886">1886</option>
+              <option value="1887">1887</option>
+              <option value="1888">1888</option>
+              <option value="1889">1889</option>
+              <option value="1891">1891</option>
+              <option value="1892">1892</option>
+          </select>
+        </div>
+        <br><br>
+        <button>Submit</button>
+    </form>
+    
+<div id="graphresults"></div>
+
+<div id="documents"></div>
+
+</body>
+{% endblock %}
+
+</html>

@@ -1,0 +1,62 @@
+{% load static %}
+
+<head>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'pages/about.css' %}">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/"><i class="fab fa-pagelines"></i>  WW:TBHT</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/searching">Search</a></li>
+        <li><a href="/data">Data - Keywords</a></li>
+        <li><a href="/graphs">Data - Graphs</a></li>
+        <li><a href="/background">Background</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="about">
+    <div class="container" class="about_inside">
+        <h2 class="about_h2">About WW:TBHT</h2>
+    </div>
+</div>
+
+<div class="credits">
+    <div class="container" class="credits_inside">
+        <h2 class="about_h2">Credits and Citations</h2>
+        All documents existing in the WW:TBHT database were collected from The Walt Whitman Archive.  For more details and to browse the stunning collection, see: <a href="https://whitmanarchive.org/">https://www.whitmanarchive.org</a>.<br><br>
+        Citations for each document exist in the JSON and can be easily accessed.<br><br>
+        <em>Citation:</em>   <strong>Whitman, Walt. Leaves of Grass. 1855. The Walt Whitman Archive. Gen. ed. Ed Folsom and Kenneth M. Price. Accessed November 2017 - December 2018. </strong>
+        <br><br>
+        <p>.....</p>
+        <br>
+        Vine Artwork by Joshua Brown
+    </div>
+</div>
+
+</body>
