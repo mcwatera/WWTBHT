@@ -2,6 +2,8 @@ import os
 import re
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer, TfidfTransformer
 import pandas as pd
+from collections import OrderedDict
+from operator import getitem 
 
 def datakeywords():
     #for each year
@@ -85,7 +87,7 @@ def extract_topn_from_vector(feature_names, sorted_items, topn=15):
  
     #create a tuples of feature,score
     #results = zip(feature_vals,score_vals)
-    results= {}
+    results = {}
     for idx in range(len(feature_vals)):
         results[feature_vals[idx]]=score_vals[idx]
     

@@ -3,14 +3,6 @@ body {
     background-color: #efefef;
 }
 
-.contact {
-    margin: 100px;
-    padding: 50px;
-    text-align: center;
-    border: 1px black dashed;
-}
-
-
 .navform {
     float: right;
     border: 1px black dashed;
@@ -22,99 +14,14 @@ body {
     text-align: center;
 }
 
-.OneResult {
-    display: block;
+.bk-root {
+    margin: 5% 25%;
     width: 800px;
+    height: 500px;
 }
 
-.vine_right {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.results_title {
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-top: 50px;
-    border-bottom: 1px solid black;
-}
-
-.highlight {
-    color: red;
-    font-weight: bold;
-    font-size: 18px;
-}
-
-.credits {
+h2 {
     text-align: center;
-}
-
-.credits_inside {
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-}
-
-.about {
-    text-align: center;
-}
-
-.about_inside {
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-}
-
-.about_h2 {
-    margin-bottom: 30px;
-    border-bottom: 1px solid black;
-}
-
-.logo {
-    margin-top: 20px;
-    margin-bottom: 0px;
-}
-
-.graph {
-    width: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: 1.5px solid black;
-}
-
-.code {
-    margin: 20px 50px;
-    font-style: italic;
-}
-
-.tibble {
-    border: 1px solid black;
-    margin-top: 50px;
-    padding: 10px;
-    background-color: white;
-}
-
-.last_tibble {
-    margin-bottom: 50px;
-    background-color: white;
-}
-
-#interesting_words {
-    margin-top: 100px;
-}
-
-.search_h3 {
-    border-bottom: 1px solid black;
-}
-
-
-.navbar {
-  font-size: 14px;
+    margin-top: 5%;
+    text-decoration: underline;
 }

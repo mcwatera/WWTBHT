@@ -4,8 +4,12 @@ from django.shortcuts import render, get_object_or_404, redirect, render_to_resp
 from django.urls import reverse
 import plotly.express as px
 from bokeh.plotting import figure, output_file, show
+from bokeh.resources import CDN
 from bokeh.layouts import gridplot
-from bokeh.embed import components
+import bokeh.embed
+from bokeh.embed import json_item
+import json 
+from bokeh.io import curdoc
 from bokeh.models import HoverTool, SaveTool, LabelSet, ColumnDataSource
 from pandas.core.frame import DataFrame
 import collections
@@ -21,18 +25,33 @@ def graphs(request):
     template = loader.get_template('pages/graphs.html')
     
     results = datakeywords()
-    scriptanddivdict = dict()
+    results = dict(sorted(results.items(), key=lambda x: x[0]))
+    
+    json_dict = dict()
     for result in results.keys():
         currentlist = []
-        year = int(result)
+        year = str(result)
         keywords = results[result]
-        script, div = YearsOnlyCharter(keywords, year)
-        currentlist.append(script)
-        currentlist.append(div)
-        scriptanddivdict[result] = currentlist
+        json_dump = YearsOnlyCharter(keywords, year)
+        json_dump = json.loads(json_dump)
+        json_dict[year] = json_dump
+        
+    years_list = []    
+    for result in results.keys():
+        year = str(result)
+        years_list.append(year)
+        
+    year_string = ""
+    for year in years_list:
+        year_string = year_string + year + ","
+    
+    js_json_dict = json.dumps(json_dict)
+        
         
     context = {
-            'graphsdict': scriptanddivdict,
+        'year_string': year_string,
+        'js_json_dict': js_json_dict,
+        'resources': CDN.render(),
     }
     
     return render(request, 'pages/graphs.html', context)
@@ -66,6 +85,8 @@ def YearsOnlyCharter(results, year):
     
     title = str(year) + " TF-IDF"
     
+    year_int = year
+    
     p = figure(title=title,
         x_axis_label = 'Words', 
         y_axis_label = 'TF-IDF Score',
@@ -73,6 +94,7 @@ def YearsOnlyCharter(results, year):
         plot_height = 500,
         plot_width = 1000,
         tools = [save],
+        name = year_int
     )
     
     p.toolbar.active_drag = None
@@ -105,5 +127,4 @@ def YearsOnlyCharter(results, year):
     
     p.add_layout(labels)
     
-    script, div = components(p)
-    return script, div
+    return json.dumps(json_item(p))

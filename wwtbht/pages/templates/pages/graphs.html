@@ -1,20 +1,20 @@
 {% load static %}
+{% load js %}
 
 {% block head %}
+<!DOCTYPE html>
+<html lang="en">
 <head>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-    <link href="http://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.css" rel="stylesheet" type="text/css">
-   <link href="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.4.min.css" rel="stylesheet" type="text/css">
-   <script src="http://cdn.pydata.org/bokeh/release/bokeh-1.0.4.min.js"></script>
-   <script src="http://cdn.pydata.org/bokeh/release/bokeh-widgets-1.0.4.min.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="{% static 'pages/graphs.css' %}">
-    {% for scriptdiv in graphsdict.values %}
-      {{ scriptdiv.0 | safe }}
-    {% endfor %}
+    
+    {{ resources | safe }}
+    
     <title>WW:TBHT</title>
 </head>
 {% endblock %}
@@ -39,7 +39,6 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/searching">Search</a></li>
-        <li><a href="/data">Data - Keywords</a></li>
         <li><a href="/graphs">Data - Graphs</a></li>
         <li><a href="/background">Background</a></li>
       </ul>
@@ -50,12 +49,35 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  
-{% for scriptdiv in graphsdict.values %}
-  {{ scriptdiv.1 | safe }}
-{% endfor %}
+
+<h2>Top 15 Words by Year</h2>
+<div id="graphicallist">
+{% for year in year_list %}
+      <div id="{{ year }}" class="yeargraph">
+      </div>
+ {% endfor %}
+</div>
+
+<script> 
+  var year_string = "{{ year_string | escapejs }}";
+  var year_list = year_string.split(",");
+  year_list.pop();
+  var json_dict = JSON.parse("{{ js_json_dict | escapejs }}");
+  for(var i=0; i < year_list.length; i++) {
+    g = document.createElement('div');
+    g.id = year_list[i];
+    document.body.appendChild(g); 
+  }
+  for(var key in json_dict){
+    var json_item = json_dict[key];
+    var year = key;
+    year = year.toString();
+    Bokeh.embed.embed_item(json_item, year);
+  }
+</script>
   
 </body>
 {% endblock %}
+
 
 </html>
