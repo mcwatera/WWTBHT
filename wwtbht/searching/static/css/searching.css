@@ -5,8 +5,8 @@ body{
 }
 
 form{
-    border: #339933 solid 5px;
-    border-radius: 10px;
+    border: #339933 solid 3px;
+    border-radius: 9px;
     padding: 20px;
     width: 300px;
     float: right;

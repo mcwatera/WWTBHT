@@ -27,11 +27,13 @@
             document.getElementById("myform").reset();
             document.getElementById('revealifyear').style.display = 'none';
             document.getElementById('revealifkeyword').style.display = 'block';
+            $("#keywordsearch").prop("checked", true);
           }
           else if (document.getElementById('yearsearch').checked) {
             document.getElementById("myform").reset();
             document.getElementById('revealifkeyword').style.display = 'none';
             document.getElementById('revealifyear').style.display = 'block';
+            $("#yearsearch").prop("checked", true);
           }
           else {
             document.getElementById('revealifyear').style.display = 'none';
