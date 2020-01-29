@@ -1,0 +1,1 @@
+web: gunicorn wwtbht.wsgi --log-file -

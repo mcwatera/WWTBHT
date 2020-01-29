@@ -1,0 +1,438 @@
+------------------TFIDF RESULTS, TOP 10 WORDS PER YEAR-----------------------
+
+1842
+-----------------------
+temperance : 0.303
+aid : 0.174
+novel : 0.166
+romance : 0.159
+villages : 0.151
+tract : 0.151
+snares : 0.151
+purify : 0.151
+mammoth : 0.151
+intoxicating : 0.151
+
+
+1845
+-----------------------
+politics : 0.207
+opportunity : 0.15
+articles : 0.15
+typographically : 0.137
+shirval : 0.137
+nain : 0.137
+lighter : 0.137
+gallowswe : 0.137
+furtherthe : 0.137
+dunn : 0.137
+
+
+1855
+-----------------------
+the : 0.346
+poet : 0.134
+them : 0.108
+poems : 0.098
+nor : 0.088
+love : 0.085
+poetry : 0.084
+leaves : 0.081
+american : 0.081
+he : 0.081
+
+
+1856
+-----------------------
+grass : 0.183
+the : 0.177
+am : 0.123
+book : 0.122
+leaves : 0.118
+poet : 0.111
+world : 0.106
+earth : 0.105
+author : 0.103
+guess : 0.09
+
+
+1857
+-----------------------
+education : 0.155
+wholesome : 0.14
+witch : 0.122
+overvalued : 0.122
+mortar : 0.122
+lawn : 0.122
+knocked : 0.122
+kicks : 0.122
+jolly : 0.122
+holloed : 0.122
+
+
+1858
+-----------------------
+hi : 0.174
+household : 0.162
+clam : 0.162
+expose : 0.151
+volume : 0.151
+leaves : 0.12
+grass : 0.12
+manhood : 0.112
+soarer : 0.107
+resort : 0.107
+
+
+1859
+-----------------------
+performance : 0.135
+poem : 0.135
+columns : 0.125
+enveloped : 0.117
+perpetrated : 0.103
+eluding : 0.103
+definition : 0.098
+saturday : 0.093
+spark : 0.092
+drivel : 0.092
+
+
+1860
+-----------------------
+book : 0.156
+leaves : 0.148
+grass : 0.148
+poet : 0.129
+it : 0.124
+am : 0.109
+american : 0.109
+nor : 0.102
+poems : 0.099
+poetry : 0.098
+
+
+1861
+-----------------------
+potato : 0.162
+emerson : 0.138
+poet : 0.134
+masks : 0.132
+wild : 0.111
+ls : 0.109
+muscular : 0.108
+louder : 0.108
+whim : 0.096
+oxen : 0.088
+
+
+1865
+-----------------------
+pioneers : 0.421
+poet : 0.191
+taps : 0.18
+drum : 0.144
+war : 0.116
+poetry : 0.116
+life : 0.116
+it : 0.107
+book : 0.101
+expression : 0.088
+
+
+1866
+-----------------------
+poet : 0.183
+war : 0.137
+poems : 0.132
+book : 0.13
+the : 0.11
+volume : 0.108
+love : 0.095
+author : 0.094
+life : 0.093
+nature : 0.092
+
+
+1867
+-----------------------
+american : 0.15
+am : 0.113
+functions : 0.103
+grass : 0.096
+man : 0.094
+leaves : 0.092
+ministry : 0.089
+life : 0.087
+book : 0.085
+personal : 0.084
+
+
+1868
+-----------------------
+rossetti : 0.209
+poet : 0.179
+the : 0.17
+poetry : 0.148
+poems : 0.137
+rosetti : 0.104
+all : 0.1
+american : 0.093
+that : 0.091
+to : 0.084
+
+
+1869
+-----------------------
+poetry : 0.195
+rossetti : 0.179
+poet : 0.129
+the : 0.117
+america : 0.111
+buchanan : 0.107
+poems : 0.104
+democracy : 0.1
+is : 0.092
+future : 0.089
+
+
+1870
+-----------------------
+unconventionality : 0.185
+poet : 0.161
+the : 0.127
+earth : 0.122
+spiritual : 0.117
+spiritualism : 0.105
+indiathese : 0.104
+true : 0.099
+researches : 0.092
+poems : 0.086
+
+
+1871
+-----------------------
+art : 0.163
+nature : 0.155
+aristocratic : 0.147
+life : 0.128
+democratic : 0.119
+character : 0.115
+democracy : 0.109
+body : 0.109
+soul : 0.104
+society : 0.101
+
+
+1872
+-----------------------
+the : 0.167
+american : 0.149
+captain : 0.125
+is : 0.106
+poet : 0.096
+past : 0.096
+man : 0.093
+emerson : 0.091
+life : 0.091
+people : 0.09
+
+
+1874
+-----------------------
+poetry : 0.16
+poet : 0.144
+der : 0.113
+de : 0.1
+catholic : 0.094
+poems : 0.092
+ish : 0.088
+it : 0.087
+american : 0.087
+breitmann : 0.084
+
+
+1875
+-----------------------
+dowden : 0.231
+rossetti : 0.121
+poetry : 0.12
+poet : 0.117
+dr : 0.108
+nature : 0.103
+goethe : 0.1
+affectation : 0.093
+extravagance : 0.089
+originality : 0.085
+
+
+1876
+-----------------------
+the : 0.164
+rivulets : 0.122
+eidólons : 0.121
+to : 0.104
+poet : 0.104
+day : 0.101
+two : 0.1
+verse : 0.087
+poetry : 0.084
+buchanan : 0.082
+
+
+1880
+-----------------------
+life : 0.156
+rule : 0.135
+rivulets : 0.127
+farther : 0.113
+the : 0.101
+common : 0.095
+sail : 0.085
+government : 0.083
+judiciary : 0.08
+men : 0.079
+
+
+1881
+-----------------------
+poet : 0.22
+poems : 0.147
+grass : 0.136
+lines : 0.113
+thou : 0.108
+earth : 0.108
+poetry : 0.106
+am : 0.106
+the : 0.105
+gap : 0.104
+
+
+1882
+-----------------------
+poet : 0.174
+the : 0.133
+book : 0.131
+poetry : 0.122
+grass : 0.122
+leaves : 0.115
+it : 0.102
+war : 0.097
+prose : 0.096
+poems : 0.095
+
+
+1883
+-----------------------
+id : 0.373
+sa : 0.139
+cons : 0.105
+poems : 0.097
+american : 0.097
+it : 0.093
+literature : 0.09
+america : 0.088
+ide : 0.087
+poet : 0.081
+
+
+1884
+-----------------------
+eight : 0.172
+poet : 0.15
+unseen : 0.126
+twenty : 0.122
+it : 0.111
+ong : 0.102
+leaves : 0.102
+lonesome : 0.098
+says : 0.096
+myself : 0.091
+
+
+1886
+-----------------------
+rhys : 0.386
+captain : 0.174
+love : 0.134
+rossetti : 0.109
+drawing : 0.095
+grundy : 0.086
+respectable : 0.084
+for : 0.083
+bells : 0.078
+publicly : 0.077
+
+
+1887
+-----------------------
+life : 0.153
+it : 0.12
+death : 0.115
+the : 0.106
+war : 0.1
+time : 0.098
+poet : 0.093
+leaves : 0.092
+nature : 0.09
+spirit : 0.083
+
+
+1888
+-----------------------
+boughs : 0.181
+volume : 0.176
+november : 0.162
+leaves : 0.146
+poet : 0.144
+grass : 0.136
+poetry : 0.135
+author : 0.103
+poems : 0.1
+lines : 0.094
+
+
+1889
+-----------------------
+boughs : 0.208
+november : 0.202
+the : 0.161
+poet : 0.152
+volume : 0.129
+poetry : 0.111
+poems : 0.11
+america : 0.109
+grass : 0.108
+leaves : 0.105
+
+
+1891
+-----------------------
+bye : 0.368
+good : 0.128
+the : 0.127
+fancy : 0.122
+frederic : 0.113
+poet : 0.11
+annex : 0.107
+volume : 0.106
+little : 0.101
+emperor : 0.1
+
+
+1892
+-----------------------
+meredith : 0.28
+nature : 0.168
+eidólons : 0.167
+characteristically : 0.167
+sonnet : 0.141
+study : 0.117
+lowell : 0.107
+poetic : 0.106
+weighted : 0.093
+weathers : 0.093
+
+
+------------------PMI RESULTS, TOP 10 WORDS PER YEAR-----------------------
+

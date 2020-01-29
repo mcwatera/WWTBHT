@@ -25,7 +25,8 @@ SECRET_KEY = 'bhr-v@!2+w^1ctrf21!24orkk_4edd6g*v3)tzhsf1&6x(c5@k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['813aa42e36f345cc8f023ae83bbd25ed.vfs.cloud9.us-east-2.amazonaws.com']
+ALLOWED_HOSTS = ['813aa42e36f345cc8f023ae83bbd25ed.vfs.cloud9.us-east-2.amazonaws.com',
+                 '77a14150cccf4982a4d7ba872133cac6.vfs.cloud9.us-east-2.amazonaws.com']
 
 
 # Application definition
@@ -79,8 +80,12 @@ WSGI_APPLICATION = 'wwtbht.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wwtbht',
+        'USER': 'power_user',
+        'PASSWORD': '$poweruserpassword',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 

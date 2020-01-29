@@ -36,6 +36,8 @@ def index(request):
         elif keyword is not None:
             keyword_for_query = " " + keyword + " "
             keyword_for_query = keyword_for_query.lower()
+            print(keyword)
+            print(keyword_for_query)
             documents = Insight.objects.filter(body__contains=keyword)
             results = KeywordSearchTFIDF(keyword.lower())
             if results == "No results found":

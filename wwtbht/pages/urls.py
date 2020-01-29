@@ -10,6 +10,7 @@ urlpatterns = [
     path('about', views.about, name="about"),
     path('background', views.background, name="background"),
     path('contact', views.contact, name="contact"),
+    path('ppmigraphs', views.ppmigraphs, name="ppmigraphs"),
 ]
 
 #def select(request, text_id):

@@ -22,6 +22,8 @@
         $('#yearsearch').on("click", function(){choiceCheck()});
         $('#keywordsearch').on("click", function(){choiceCheck()});
         
+        highlightKeywords();
+        
       function choiceCheck() {
           if (document.getElementById('keywordsearch').checked) {
             document.getElementById("myform").reset();
@@ -103,12 +105,17 @@
    
    <div id="resultsdocuments">
     {% for document in documents %}
+    <span class="vines">
+     <img class="vine_left_docs" src="https://i.ibb.co/285jFB5/download.png">
+     <img class="vine_right_docs" src="https://i.ibb.co/285jFB5/download.png">
+    </span><br><br><br><br><br><br>
       <div class="document">
         <h3 class="title">{{ document.title }} </h3>
         <h4 class="date"> {{ document.date }} </h4>
         <p class="citation"><em> {{ document.citation }} </em></p>
         <div class="text">{{ document.body | safe }}</div>
       </div>
+    <br><br><br>
     {% endfor %}
    </div>
    
@@ -163,7 +170,7 @@
           </select>
         </div>
         <br><br>
-        <button>Submit</button>
+        <span id="submitbutton"><button>Submit</button></span>
     </form>
     
 <div id="graphresults"></div>
